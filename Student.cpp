@@ -1,9 +1,9 @@
 #include "Student.h"
 
 // Constructors
-Student::Student() {}
+Student::Student() : Person() {}
 
-Student::Student(const Student& other) {}
+Student::Student(const Student& other) : Person(other) {}
 
 Student::Student(int urid, std::string netid, std::string lname, std::string fname,
         int dob_day, int dob_mo, int dob_yr,
@@ -17,32 +17,37 @@ Student::Student(int urid, std::string netid, std::string lname, std::string fna
 
 }
 
+Student::~Student() {}
+
 // Methods
-std::list<std::string> getCourses() {
+std::list<std::string> Student::getCourses()
+{
     std::list<std::string> list;
     return list;
 }
-void addCourse(std::string course) {}
-void removeCourse(std::string course) {}
-void printCourses(){}
-void setCourses(std::list<std::string> courses){}
-void clearCourses(){}
+void Student::addCourse(std::string course) {}
+void Student::removeCourse(std::string course) {}
+void Student::printCourses() {}
+void Student::setCourses(std::list<std::string> courses) {}
+void Student::clearCourses() {}
 
-struct tm getAdmitDate(){
+struct tm Student::getAdmitDate(){
     struct tm admitDate;
     return admitDate;
 }
-Student::School getSchool(){
+Student::School Student::getSchool(){
     Student::School schoolName = Student::AS;
     return  schoolName;
 }
-double getGPA(){
+double Student::getGPA(){
     return 0.0;
 }
-double getUnitsCompleted(){
+double Student::getUnitsCompleted()
+{
     return 0.0;
 }
-bool isFullTime(){
+bool Student::isFullTime()
+{
     return false;
 }
 
