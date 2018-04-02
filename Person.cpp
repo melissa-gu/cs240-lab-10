@@ -26,81 +26,100 @@ fname, int dob_day, int dob_month, int dob_year, std::string email,
 std::string address, long phone) {
 }
 
+// Deconstructor
+Person::~Person() {}
+
 //-----------------------------------------------------------------------------
 // beginning of getters and setters
 //-----------------------------------------------------------------------------
 //
 // Return a Person's First Name
-std::string Person::getFirstName() {
+std::string Person::getFirstName()
+{
     return "";
 }
 
 // Return a Person's Last Name
-std::string getLastName() {
+std::string Person::getLastName()
+{
     return "";
 }
 
 // Return a Person's Date of Birth
-struct tm getDateOfBirth() {
+struct tm Person::getDateOfBirth()
+{
     struct tm dob;
     return dob;
 }
 
 // Return a Person's Address
-std::string getAddress() {
+std::string Person::getAddress()
+{
     return "";
 }
 
 // Return the NetID
-std::string getNetID() {
+std::string Person::getNetID()
+{
     return "";
 }
 
 // Return URID
-int getURID() {
+int Person::getURID()
+{
     return 0;
 }
 
 // Return Email
-std::string getEmail() {
+std::string Person::getEmail()
+{
     return "";
 }
 
 // Return Phone Number
-long getPhone() {
+long Person::getPhone()
+{
     return 0;
 }
 
 // set the first name
-void setFirstName(std::string fname) {
+void Person::setFirstName(std::string fname)
+{
 }
 
 // set the last name
-void setLastName(std::string lname) {
+void Person::setLastName(std::string lname)
+{
 }
 
 // set the date of birth
-void setDateOfBirth(int day, int month, int year) {
+void Person::setDateOfBirth(int day, int month, int year)
+{
 }
 
 // set the Address
-void setAddress(std::string address) {
+void Person::setAddress(std::string address)
+{
 }
 
 // set the NetID
-void setNetID(std::string netid) {
+void Person::setNetID(std::string netid)
+{
 }
 
 // set the URID
-void setURID(int urid) {
+void Person::setURID(int urid)
+{
 }
 
 // set the Email
-void setEmail(std::string email) {
+void Person::setEmail(std::string email)
+{
 }
 
 // set the phone number
-void setPhone(long number) {
+void Person::setPhone(long number)
+{
 }
 
-#endif
+
