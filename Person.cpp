@@ -1,3 +1,4 @@
+// Programmers: Melissa
 #ifndef __PERSON_CPP__
 #define __PERSON_CPP__
 
@@ -30,7 +31,7 @@ std::string address, long phone) {
 //-----------------------------------------------------------------------------
 //
 // Return a Person's First Name
-std::string getFirstName() {
+std::string Person::getFirstName() {
     return "";
 }
 
