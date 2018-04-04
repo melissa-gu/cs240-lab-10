@@ -15,6 +15,7 @@ class Student : public Person
     protected:
         // Instance Variables
         struct tm admitDate;
+        double GPA;
         School school; 
         bool is_full_time;
         double units_completed;

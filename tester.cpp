@@ -72,9 +72,21 @@ int main()
     cout << endl;
 
     // Testing GPA Getter/Setter
-    cout << "s1.setGPA(4.0);" << endl;
-    s1.setGPA(4.0);
-    cout << "GPA: " << s1.getGPA() << " [Expected: 4.0]" << endl;
+    cout << "s1.setGPA(3.7);" << endl;
+    s1.setGPA(3.7);
+    cout << "GPA: " << s1.getGPA() << " [Expected: 3.7]" << endl;
+    cout << endl;
+
+    // Testing Units Completed Getter/Setter
+    cout << "s1.setUnitsCompleted(2.5);" << endl;
+    s1.setUnitsCompleted(2.5);
+    cout << "Units Completed: " << s1.getUnitsCompleted() << " [Expected: 2.5]" << endl;
+    cout << endl;
+
+    // Testing Full Time Status Getter/Setter
+    cout << "s1.setFullTimeStatus(true);" << endl;
+    s1.setFullTimeStatus(true);
+    cout << "Full Time Status: " << boolalpha << s1.isFullTime() << " [Expected: true]" << endl;
     cout << endl;
 
     return 0;

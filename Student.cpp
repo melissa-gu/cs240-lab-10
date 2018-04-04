@@ -63,15 +63,15 @@ Student::School Student::getSchool()
 }
 double Student::getGPA()
 {
-    return 0.0;
+    return GPA;
 }
 double Student::getUnitsCompleted()
 {
-    return 0.0;
+    return units_completed;
 }
 bool Student::isFullTime()
 {
-    return false;
+    return is_full_time;
 }
 
 // Setters
@@ -89,15 +89,15 @@ void Student::setSchool(School school)
 
 void Student::setGPA(double gpa)
 {
-
+    this->GPA = gpa;
 }
 
 void Student::setUnitsCompleted(double units)
 {
-
+    units_completed = units;
 }
 
 void Student::setFullTimeStatus(bool isFullTime)
 {
-
+    is_full_time = isFullTime;
 }
