@@ -14,9 +14,7 @@ class Student : public Person
 
     protected:
         // Instance Variables
-        int day_admit; 
-        int month_admit; 
-        int year_admit;
+        struct tm admitDate;
         School school; 
         bool is_full_time;
         double units_completed;

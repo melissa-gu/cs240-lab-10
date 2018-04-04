@@ -26,8 +26,9 @@ int main()
     cout << "                   Testing Student                   " << endl;
     cout << "-----------------------------------------------------" << endl << endl;
 
+    cout << "-------------------------" << endl;
     cout << "Testing setters/getters:" << endl;
-    cout << "-----------------------------------------------------" << endl;
+    cout << "-------------------------" << endl;
     // Default Constructor
     cout << "Student s1;" << endl;
     Student s1;
@@ -40,11 +41,41 @@ int main()
     //                     "john.smith@richmond.edu", "1234 Main St", 5551212, 1,
     //                     1, 2018, Student::AS, true, 2.5);
 
-    
+    // Test admitDate Getter/Setter
+    cout << "s1.setAdmitDate(1, 1, 118);" << endl;
+    s1.setAdmitDate(1, 1, 118);
+    cout << "Admit Date: " << s1.getAdmitDate().tm_mday << ", " 
+         << s1.getAdmitDate().tm_mon << ", " 
+         << s1.getAdmitDate().tm_year << " [Expected: 1, 1, 118]" << endl;
+    cout << endl;
 
-    cout << "s1.setFirstName(\"Lilly\")" << endl;
-    s1.setFirstName("Lilly");
-    cout << "First Name: " << s1.getFirstName() << "[Expected: Lilly]" << endl;
+    // Test school Getter/Setter
+    cout << "s1.setSchool(Student::AS);" << endl;
+    s1.setSchool(Student::AS);
+    string schoolName; 
+    switch(s1.getSchool())
+    {
+        case 0: schoolName = "AS";
+                break;
+        case 1: schoolName = "JSLS";
+                break;
+        case 2: schoolName = "LAW";
+                break;
+        case 3: schoolName = "RSB";
+                break;
+        case 4: schoolName = "SPCS";
+                break;
+        case 5: schoolName = "UNDEFINED";
+                break;
+    };
+    cout << "School: " << schoolName << " [Expected: AS]" << endl;
+    cout << endl;
+
+    // Testing GPA Getter/Setter
+    cout << "s1.setGPA(4.0);" << endl;
+    s1.setGPA(4.0);
+    cout << "GPA: " << s1.getGPA() << " [Expected: 4.0]" << endl;
+    cout << endl;
 
     return 0;
 }

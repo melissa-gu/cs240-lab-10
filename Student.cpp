@@ -4,9 +4,9 @@
 // Constructors
 Student::Student() : Person() 
 {
-    day_admit = 0;
-    month_admit = 0;
-    year_admit = 0;
+    admitDate.tm_mday = 0;
+    admitDate.tm_mon = 0;
+    admitDate.tm_year = 0;
     school = Student::AS;
     is_full_time = true;
     units_completed = 0;
@@ -14,9 +14,9 @@ Student::Student() : Person()
 
 Student::Student(const Student& other) : Person(other) 
 {
-    this->day_admit = other.day_admit;
-    this->month_admit = other.month_admit;
-    this->year_admit = other.year_admit;
+    this->admitDate.tm_mday = other.admitDate.tm_mday;
+    this->admitDate.tm_mon = other.admitDate.tm_mon;
+    this->admitDate.tm_year = other.admitDate.tm_year;
     this->school = other.school;
     this->is_full_time = other.is_full_time;
     this->units_completed = other.units_completed;
@@ -31,9 +31,9 @@ Student::Student(int urid, std::string netid, std::string lname, std::string fna
                                          dob_day, dob_mo, dob_yr,
                                          email, address, phone) 
 {
-    this->day_admit = day_admit;
-    this->month_admit = month_admit;
-    this->year_admit = year_admit;
+    this->admitDate.tm_mday = day_admit;
+    this->admitDate.tm_mon = month_admit;
+    this->admitDate.tm_year = year_admit;
     this->school = school;
     this->is_full_time = is_full_time;
     this->units_completed = units_completed;
@@ -55,13 +55,11 @@ void Student::clearCourses() {}
 
 struct tm Student::getAdmitDate()
 {
-    struct tm admitDate;
     return admitDate;
 }
 Student::School Student::getSchool()
 {
-    Student::School schoolName = Student::AS;
-    return  schoolName;
+    return school;
 }
 double Student::getGPA()
 {
@@ -76,3 +74,30 @@ bool Student::isFullTime()
     return false;
 }
 
+// Setters
+void Student::setAdmitDate(int day, int month, int year) 
+{
+    admitDate.tm_mday = day;
+    admitDate.tm_mon = month;
+    admitDate.tm_year = year;
+}
+
+void Student::setSchool(School school)
+{
+    this->school = school;
+}
+
+void Student::setGPA(double gpa)
+{
+
+}
+
+void Student::setUnitsCompleted(double units)
+{
+
+}
+
+void Student::setFullTimeStatus(bool isFullTime)
+{
+
+}
