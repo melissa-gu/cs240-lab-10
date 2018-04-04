@@ -1,3 +1,4 @@
+// Programmers: Melissa Gu and Trevor LeForge
 #include "Person.h"
 #include "Student.h"
 

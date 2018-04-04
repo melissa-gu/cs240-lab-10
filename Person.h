@@ -1,3 +1,4 @@
+// Programmers: Melissa Gu and Trevor LeForge
 #ifndef __PERSON_H__
 #define __PERSON_H__
 

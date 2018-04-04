@@ -1,6 +1,4 @@
-// Programmers: Melissa
-#ifndef __PERSON_CPP__
-#define __PERSON_CPP__
+// Programmers: Melissa Gu and Trevor LeForge
 
 #include <string>
 #include <ctime>
