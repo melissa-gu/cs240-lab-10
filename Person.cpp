@@ -11,17 +11,47 @@
 //
 // Default Constructor
 Person::Person() {
+    urid = 00000000;
+    netid = " ";
+    lname = " ";
+    fname = " ";
+    dob_day = 0;
+    dob_month = 0;
+    dob_year = 0;
+    email = " ";
+    address = " ";
+    phone = 0000000000;
 
 }
 
 // Constructor that takes in another instance of Person as the parameter
 Person::Person(const Person& other) {
+    urid = other.urid;
+    netid = other.netid;
+    lname = other.lname;
+    fname = other.fname;
+    dob_day = other.dob_day;
+    dob_month = other.dob_month;
+    dob_year = other.dob_year;
+    email = other.email;
+    address = other.address;
+    phone = other.phone;
 }
 
 // Constructor that needs alllllllll of the information upfront
 Person::Person(int urid, std::string netid, std::string lname, std::string
 fname, int dob_day, int dob_month, int dob_year, std::string email,
 std::string address, long phone) {
+    this->urid = urid;
+    this->netid = netid;
+    this->lname = lname;
+    this->fname = fname;
+    this->dob_day = dob_day;
+    this->dob_month = dob_month;
+    this->dob_year = dob_year;
+    this->email = email;
+    this->address = address;
+    this->phone = phone;
 }
 
 // Deconstructor
