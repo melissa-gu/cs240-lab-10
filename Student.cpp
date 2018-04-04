@@ -2,7 +2,7 @@
 #include "Student.h"
 #include <iostream>
 
-// Constructors
+// ----------------Constructors----------------
 Student::Student() : Person() 
 {
     admitDate.tm_mday = 0;
@@ -43,9 +43,10 @@ Student::Student(int urid, std::string netid, std::string lname, std::string fna
     this->units_completed = units_completed;
 }
 
-Student::~Student() {}
+Student::~Student() {} // Destructor
 
-// Methods
+// ----------------Methods----------------
+// Courses
 std::list<std::string> Student::getCourses()
 {
     return courses;
@@ -75,6 +76,7 @@ void Student::clearCourses()
     courses.clear();
 }
 
+// Getters
 struct tm Student::getAdmitDate()
 {
     return admitDate;

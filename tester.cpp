@@ -12,9 +12,10 @@ int main()
     cout << "-----------------------------------------------------" << endl;
     cout << "                   Testing Person                    " << endl;
     cout << "-----------------------------------------------------" << endl << endl;
-    
+
+    cout << "--------------------------------" << endl;
     cout << "Testing setters/getters:" << endl;
-    cout << "-----------------------------------------------------" << endl;
+    cout << "--------------------------------" << endl << endl;
     cout << "Person p;" << endl;
     Person p;
     
@@ -60,7 +61,9 @@ int main()
     cout << "Phone: " << p.getPhone() << "[Expected: 7577330910]";
     cout << endl << endl;
 
+    cout << "--------------------------------" << endl;
     cout << "Testing Constructors:" << endl;
+    cout << "--------------------------------" << endl << endl;
     cout << "Person p2 = p;" << endl;
     Person p2 = p;
     cout << "Testing to see if it has most of the same data stored;" << endl;
@@ -95,9 +98,9 @@ int main()
     cout << "                   Testing Student                   " << endl;
     cout << "-----------------------------------------------------" << endl << endl;
 
-    cout << "-------------------------" << endl;
+    cout << "--------------------------------" << endl;
     cout << "Testing setters/getters:" << endl;
-    cout << "-------------------------" << endl;
+    cout << "--------------------------------" << endl << endl;
     // Default Constructor
     cout << "Student s1;" << endl;
     Student s1;
@@ -107,7 +110,7 @@ int main()
     s1.setAdmitDate(1, 1, 2018);
     cout << "Admit Date: " << s1.getAdmitDate().tm_mday << ", " 
          << s1.getAdmitDate().tm_mon << ", " 
-         << s1.getAdmitDate().tm_year << " [Expected: 1, 1, 118]" << endl;
+         << s1.getAdmitDate().tm_year << " [Expected: 1, 1, 2018]" << endl;
     cout << endl;
 
     // Test school Getter/Setter
@@ -189,31 +192,39 @@ int main()
     cout << endl;
 
     // Testing Other Constructors
-    cout << "Testing Constructors:" << endl << endl;
+    cout << "--------------------------------" << endl;
+    cout << "Testing Constructors:" << endl;
+    cout << "--------------------------------" << endl
+         << endl;
+    ;
+
     // Copy Constructor
+    cout << "Testing Copy Constructor" << endl;
+    cout << "-------------------------" << endl;
     cout << "Student s2 = Student(s1);" << endl;
     Student s2 = Student(s1);
+    cout << "Testing to see if it has most of the same data stored:" << endl;
     cout << "Admit Date: " << s2.getAdmitDate().tm_mday << ", "
          << s2.getAdmitDate().tm_mon << ", "
-         << s2.getAdmitDate().tm_year << " [Expected: 1, 1, 118]" << endl;
-    cout << "School: " << s2.getSchool() << " [Expected: 0]" << endl;
+         << s2.getAdmitDate().tm_year << " [Expected: 1, 1, 2018]" << endl;
     cout << "GPA: " << s2.getGPA() << " [Expected: 3.7]" << endl;
     cout << "Units Completed: " << s2.getUnitsCompleted() << " [Expected: 2.5]" << endl;
-    cout << "Full Time Status: " << boolalpha << s2.isFullTime() << " [Expected: true]" << endl;
-    cout << "Courses: " << endl;
-    s2.printCourses();
-    cout << "Expected Courses: (none) " << endl;
-    s1.printCourses();
-    cout << endl;
+    cout << "Full Time Status: " << boolalpha << s2.isFullTime() << " [Expected: true]" << endl << endl;;
+    cout << "Now going to change the GPA of s1" << endl;
+    cout << "s1.setGPA(2.0);" << endl;
+    s1.setGPA(2.0);
+    cout << "s2 GPA (should be unchanged): " << s2.getGPA() << " [Expected: 3.7]" << endl << endl;;
 
     // Full Constructor
+    cout << "Testing Full Constructor" << endl;
+    cout << "-------------------------" << endl;
     cout << "Student s3 = Student(11111111, \"ab1cd\", \"Smith\", \"John\", 10, 4, 98, \"john.smith@richmond.edu\", \"1234 Main St\", 5551212, 2, 2, 2016, Student::AS, true, 3.5);" << endl;
     Student s3 = Student(11111111, "ab1cd", "Smith", "John", 10, 4, 98,
                          "john.smith@richmond.edu", "1234 Main St", 5551212, 2,
                          2, 2016, Student::AS, true, 3.5);
     cout << "Admit Date: " << s3.getAdmitDate().tm_mday << ", "
          << s3.getAdmitDate().tm_mon << ", "
-         << s3.getAdmitDate().tm_year << " [Expected: 2, 2, 116]" << endl;
+         << s3.getAdmitDate().tm_year << " [Expected: 2, 2, 2016]" << endl;
     cout << "School: " << s3.getSchool() << " [Expected: 0]" << endl;
     cout << "GPA: " << s3.getGPA() << " [Expected: 0]" << endl;
     cout << "Units Completed: " << s3.getUnitsCompleted() << " [Expected: 3.5]" << endl;

@@ -13,16 +13,18 @@ class Student : public Person
         enum School {AS, JSLS, LAW, RSB, SPCS, UNDEFINED};
 
     protected:
-        // Instance Variables
+        // ----------------Instance Variables----------------
         struct tm admitDate;
         double GPA;
-        School school; 
+        School school;
         bool is_full_time;
         double units_completed;
         std::list<std::string> courses;
 
-        // Constructors
-        public : Student();        // explicitly call Person() on implementation
+      
+    public:
+        // ----------------Constructors----------------
+        Student();                     // explicitly call Person() on implementation
         Student(const Student &other); // call Person(other) on implementation
         Student(int urid, std::string netid, std::string lname, std::string fname,
                 int dob_day, int dob_mo, int dob_yr,
@@ -30,10 +32,9 @@ class Student : public Person
                 int day_admit, int month_admit, int year_admit,
                 School school, bool is_full_time,
                 double units_completed);
-        ~Student();
+        ~Student(); // Destructor
 
-        // Methods
-
+        // ----------------Methods----------------
         // Courses
         std::list<std::string> getCourses();
         void addCourse(std::string course);
@@ -42,13 +43,13 @@ class Student : public Person
         void setCourses(std::list<std::string> courses);
         void clearCourses();
 
-        // General Info
         // Getters
         struct tm getAdmitDate();
         School getSchool();
         double getGPA();
         double getUnitsCompleted();
         bool isFullTime();
+
         // Setters
         void setAdmitDate(int day, int month, int year);
         void setSchool(School school);
