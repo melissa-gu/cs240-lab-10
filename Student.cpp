@@ -2,9 +2,25 @@
 #include "Student.h"
 
 // Constructors
-Student::Student() : Person() {}
+Student::Student() : Person() 
+{
+    admitDate.tm_mday = 0;
+    admitDate.tm_mon = 0;
+    admitDate.tm_year = 0;
+    school = Student::AS;
+    is_full_time = true;
+    units_completed = 0;
+}
 
-Student::Student(const Student& other) : Person(other) {}
+Student::Student(const Student& other) : Person(other) 
+{
+    this->admitDate.tm_mday = other.admitDate.tm_mday;
+    this->admitDate.tm_mon = other.admitDate.tm_mon;
+    this->admitDate.tm_year = other.admitDate.tm_year;
+    this->school = other.school;
+    this->is_full_time = other.is_full_time;
+    this->units_completed = other.units_completed;
+}
 
 Student::Student(int urid, std::string netid, std::string lname, std::string fname,
         int dob_day, int dob_mo, int dob_yr,
@@ -15,7 +31,12 @@ Student::Student(int urid, std::string netid, std::string lname, std::string fna
                                          dob_day, dob_mo, dob_yr,
                                          email, address, phone) 
 {
-
+    this->admitDate.tm_mday = day_admit;
+    this->admitDate.tm_mon = month_admit;
+    this->admitDate.tm_year = year_admit;
+    this->school = school;
+    this->is_full_time = is_full_time;
+    this->units_completed = units_completed;
 }
 
 Student::~Student() {}
@@ -32,23 +53,51 @@ void Student::printCourses() {}
 void Student::setCourses(std::list<std::string> courses) {}
 void Student::clearCourses() {}
 
-struct tm Student::getAdmitDate(){
-    struct tm admitDate;
+struct tm Student::getAdmitDate()
+{
     return admitDate;
 }
-Student::School Student::getSchool(){
-    Student::School schoolName = Student::AS;
-    return  schoolName;
+Student::School Student::getSchool()
+{
+    return school;
 }
-double Student::getGPA(){
-    return 0.0;
+double Student::getGPA()
+{
+    return GPA;
 }
 double Student::getUnitsCompleted()
 {
-    return 0.0;
+    return units_completed;
 }
 bool Student::isFullTime()
 {
-    return false;
+    return is_full_time;
 }
 
+// Setters
+void Student::setAdmitDate(int day, int month, int year) 
+{
+    admitDate.tm_mday = day;
+    admitDate.tm_mon = month;
+    admitDate.tm_year = year;
+}
+
+void Student::setSchool(School school)
+{
+    this->school = school;
+}
+
+void Student::setGPA(double gpa)
+{
+    this->GPA = gpa;
+}
+
+void Student::setUnitsCompleted(double units)
+{
+    units_completed = units;
+}
+
+void Student::setFullTimeStatus(bool isFullTime)
+{
+    is_full_time = isFullTime;
+}
