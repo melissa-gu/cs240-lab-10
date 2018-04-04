@@ -8,7 +8,16 @@
 class Person
 {
     protected:
-        // instance variables here...
+        int urid;
+        std::string netid;
+        std::string lname;
+        std::string fname;
+        int dob_day;
+        int dob_month;
+        int dob_year;
+        std::string email;
+        std::string address;
+        long phone;
 
     public:
         Person();
