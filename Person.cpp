@@ -21,7 +21,9 @@ Person::Person() {
     email = " ";
     address = " ";
     phone = 0000000000;
-
+    dob.tm_mday = 0;
+    dob.tm_mon  = 0;
+    dob.tm_year = 0;
 }
 
 // Constructor that takes in another instance of Person as the parameter
@@ -36,6 +38,9 @@ Person::Person(const Person& other) {
     email = other.email;
     address = other.address;
     phone = other.phone;
+    dob.tm_mday = dob_day;
+    dob.tm_mon  = dob_month;
+    dob.tm_year = dob_year;
 }
 
 // Constructor that needs alllllllll of the information upfront
@@ -52,6 +57,9 @@ std::string address, long phone) {
     this->email = email;
     this->address = address;
     this->phone = phone;
+    dob.tm_mday = dob_day;
+    dob.tm_mon  = dob_month;
+    dob.tm_year = dob_year;
 }
 
 // Deconstructor
@@ -64,90 +72,102 @@ Person::~Person() {}
 // Return a Person's First Name
 std::string Person::getFirstName()
 {
-    return "";
+    return fname;
 }
 
 // Return a Person's Last Name
 std::string Person::getLastName()
 {
-    return "";
+    return lname;
 }
 
 // Return a Person's Date of Birth
 struct tm Person::getDateOfBirth()
 {
-    struct tm dob;
     return dob;
 }
 
 // Return a Person's Address
 std::string Person::getAddress()
 {
-    return "";
+    return address;
 }
 
 // Return the NetID
 std::string Person::getNetID()
 {
-    return "";
+    return netid;
 }
 
 // Return URID
 int Person::getURID()
 {
-    return 0;
+    return urid;
 }
 
 // Return Email
 std::string Person::getEmail()
 {
-    return "";
+    return email;
 }
 
 // Return Phone Number
 long Person::getPhone()
 {
-    return 0;
+    return phone;
 }
 
 // set the first name
 void Person::setFirstName(std::string fname)
 {
+    this->fname = fname;
 }
 
 // set the last name
 void Person::setLastName(std::string lname)
 {
+    this->lname = lname;
 }
 
 // set the date of birth
 void Person::setDateOfBirth(int day, int month, int year)
 {
+    dob_day = day;
+    dob_month = month;
+    dob_year = year;
+    dob.tm_mday = dob_day;
+    dob.tm_mon  = dob_month;
+    dob.tm_year = dob_year;
 }
 
 // set the Address
 void Person::setAddress(std::string address)
 {
+    this->address = address;
 }
 
 // set the NetID
 void Person::setNetID(std::string netid)
 {
+    this->netid = netid;
 }
 
 // set the URID
 void Person::setURID(int urid)
 {
+    this->urid = urid;
 }
 
 // set the Email
 void Person::setEmail(std::string email)
 {
+    this->email = email;
 }
 
 // set the phone number
 void Person::setPhone(long number)
 {
+    phone = number;
 }
 
 

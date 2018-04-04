@@ -18,6 +18,7 @@ class Person
         std::string email;
         std::string address;
         long phone;
+        struct tm dob;
 
     public:
         Person();
