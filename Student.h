@@ -19,6 +19,7 @@ class Student : public Person
         School school; 
         bool is_full_time;
         double units_completed;
+        std::list<std::string> courses;
 
         // Constructors
         public : Student();        // explicitly call Person() on implementation

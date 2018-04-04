@@ -32,18 +32,10 @@ int main()
     // Default Constructor
     cout << "Student s1;" << endl;
     Student s1;
-    // cout << "Student s2 = Student(s1);" << endl;
-    // // Copy Constructor
-    // Student s2 = Student(s1);
-    // // Full Constructor
-    // cout << "Student s3 = Student(11111111, \"ab1cd\", \"Smith\", \"John\", 10, 4, 98, \"john.smith@richmond.edu\", \"1234 Main St\", 5551212, 1, 1, 2018, Student::AS, true, 2.5);" << endl;
-    // Student s3 = Student(11111111, "ab1cd", "Smith", "John", 10, 4, 98,
-    //                     "john.smith@richmond.edu", "1234 Main St", 5551212, 1,
-    //                     1, 2018, Student::AS, true, 2.5);
 
     // Test admitDate Getter/Setter
-    cout << "s1.setAdmitDate(1, 1, 118);" << endl;
-    s1.setAdmitDate(1, 1, 118);
+    cout << "s1.setAdmitDate(1, 1, 2018);" << endl;
+    s1.setAdmitDate(1, 1, 2018);
     cout << "Admit Date: " << s1.getAdmitDate().tm_mday << ", " 
          << s1.getAdmitDate().tm_mon << ", " 
          << s1.getAdmitDate().tm_year << " [Expected: 1, 1, 118]" << endl;
@@ -88,6 +80,79 @@ int main()
     s1.setFullTimeStatus(true);
     cout << "Full Time Status: " << boolalpha << s1.isFullTime() << " [Expected: true]" << endl;
     cout << endl;
+
+    // Testing Add Course
+    cout << "s1.addCourse(\"CS150\");" << endl;
+    s1.addCourse("CS150");
+    cout << "Courses: "; 
+    s1.printCourses(); 
+    cout << " [Expected: CS150]" << endl;
+    cout << endl;
+
+    // Testing Set Courses
+    cout << "list<string> courseList;" << endl;
+    cout << "courseList.push_back(\"CS221\");" << endl;
+    cout << "courseList.push_back(\"CS222\");" << endl;
+    cout << "s1.setCourses(courseList);" << endl;
+    list<string> courseList;
+    courseList.push_back("CS221");
+    courseList.push_back("CS222");
+    s1.setCourses(courseList);
+    cout << "Courses: " << endl;;
+    s1.printCourses();
+    cout << "[Expected: CS221 CS222]" << endl;
+    cout << endl;
+
+    // Testing Remove Course
+    cout << "s1.removeCourse(\"CS222\");" << endl;
+    s1.removeCourse("CS222");
+    cout << "Courses: ";
+    s1.printCourses();
+    cout << "[Expected: C221]" << endl;
+    cout << endl;
+
+    // Testing Clear Courses
+    cout << "s1.clearCourses();" << endl;
+    s1.clearCourses();
+    cout << "Courses: ";
+    s1.printCourses();
+    cout << "[Expected: (none)]" << endl;
+    cout << endl;
+
+    // Testing Other Constructors
+    cout << "Testing Constructors:" << endl << endl;
+    // Copy Constructor
+    cout << "Student s2 = Student(s1);" << endl;
+    Student s2 = Student(s1);
+    cout << "Admit Date: " << s2.getAdmitDate().tm_mday << ", "
+         << s2.getAdmitDate().tm_mon << ", "
+         << s2.getAdmitDate().tm_year << " [Expected: 1, 1, 118]" << endl;
+    cout << "School: " << s2.getSchool() << " [Expected: 0]" << endl;
+    cout << "GPA: " << s2.getGPA() << " [Expected: 3.7]" << endl;
+    cout << "Units Completed: " << s2.getUnitsCompleted() << " [Expected: 2.5]" << endl;
+    cout << "Full Time Status: " << boolalpha << s2.isFullTime() << " [Expected: true]" << endl;
+    cout << "Courses: " << endl;
+    s2.printCourses();
+    cout << "Expected Courses: (none) " << endl;
+    s1.printCourses();
+    cout << endl;
+
+    // Full Constructor
+    cout << "Student s3 = Student(11111111, \"ab1cd\", \"Smith\", \"John\", 10, 4, 98, \"john.smith@richmond.edu\", \"1234 Main St\", 5551212, 2, 2, 2016, Student::AS, true, 3.5);" << endl;
+    Student s3 = Student(11111111, "ab1cd", "Smith", "John", 10, 4, 98,
+                         "john.smith@richmond.edu", "1234 Main St", 5551212, 2,
+                         2, 2016, Student::AS, true, 3.5);
+    cout << "Admit Date: " << s3.getAdmitDate().tm_mday << ", "
+         << s3.getAdmitDate().tm_mon << ", "
+         << s3.getAdmitDate().tm_year << " [Expected: 2, 2, 116]" << endl;
+    cout << "School: " << s3.getSchool() << " [Expected: 0]" << endl;
+    cout << "GPA: " << s3.getGPA() << " [Expected: 0]" << endl;
+    cout << "Units Completed: " << s3.getUnitsCompleted() << " [Expected: 3.5]" << endl;
+    cout << "Full Time Status: " << boolalpha << s3.isFullTime() << " [Expected: true]" << endl;
+    cout << "Courses: " << endl;
+    s3.printCourses();
+    cout << "Expected Courses: (none) " << endl;
+    s1.printCourses();
 
     return 0;
 }
