@@ -37,7 +37,7 @@ Student::Student(int urid, std::string netid, std::string lname, std::string fna
 {
     this->admitDate.tm_mday = day_admit;
     this->admitDate.tm_mon = month_admit;
-    this->admitDate.tm_year = year_admit;
+    this->admitDate.tm_year = year_admit - 1900;
     this->school = school;
     this->is_full_time = is_full_time;
     this->units_completed = units_completed;
@@ -103,7 +103,7 @@ void Student::setAdmitDate(int day, int month, int year)
 {
     admitDate.tm_mday = day;
     admitDate.tm_mon = month;
-    admitDate.tm_year = year;
+    admitDate.tm_year = year-1900;
 }
 
 void Student::setSchool(School school)
