@@ -110,7 +110,7 @@ int main()
     s1.setAdmitDate(1, 1, 2018);
     cout << "Admit Date: " << s1.getAdmitDate().tm_mday << ", " 
          << s1.getAdmitDate().tm_mon << ", " 
-         << s1.getAdmitDate().tm_year+1900 << " [Expected: 1, 1, 2018]" << endl;
+         << s1.getAdmitDate().tm_year << " [Expected: 1, 1, 118]" << endl;
     cout << endl;
 
     // Testing school Getter/Setter
@@ -206,7 +206,7 @@ int main()
     cout << "Testing to see if it has most of the same data stored:" << endl;
     cout << "Admit Date: " << s2.getAdmitDate().tm_mday << ", "
          << s2.getAdmitDate().tm_mon << ", "
-         << s2.getAdmitDate().tm_year+1900 << " [Expected: 1, 1, 2018]" << endl;
+         << s2.getAdmitDate().tm_year << " [Expected: 1, 1, 118]" << endl;
     cout << "GPA: " << s2.getGPA() << " [Expected: 3.7]" << endl;
     cout << "Units Completed: " << s2.getUnitsCompleted() << " [Expected: 2.5]" << endl;
     cout << "Full Time Status: " << boolalpha << s2.isFullTime() << " [Expected: true]" << endl << endl;;
@@ -224,7 +224,7 @@ int main()
                          2, 2016, Student::AS, true, 3.5);
     cout << "Admit Date: " << s3.getAdmitDate().tm_mday << ", "
          << s3.getAdmitDate().tm_mon << ", "
-         << s3.getAdmitDate().tm_year+1900 << " [Expected: 2, 2, 2016]" << endl;
+         << s3.getAdmitDate().tm_year<< " [Expected: 2, 2, 116]" << endl;
     cout << "School: " << s3.getSchool() << " [Expected: 0]" << endl;
     cout << "GPA: " << s3.getGPA() << " [Expected: 0]" << endl;
     cout << "Units Completed: " << s3.getUnitsCompleted() << " [Expected: 3.5]" << endl;
