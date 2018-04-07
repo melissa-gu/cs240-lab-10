@@ -59,7 +59,7 @@ std::string address, long phone) {
     this->phone = phone;
     dob.tm_mday = dob_day;
     dob.tm_mon  = dob_month;
-    dob.tm_year = dob_year;
+    dob.tm_year = dob_year - 1900;
 }
 
 // Deconstructor
@@ -134,7 +134,7 @@ void Person::setDateOfBirth(int day, int month, int year)
 {
     dob_day = day;
     dob_month = month;
-    dob_year = year;
+    dob_year = year - 1900;
     dob.tm_mday = dob_day;
     dob.tm_mon  = dob_month;
     dob.tm_year = dob_year;

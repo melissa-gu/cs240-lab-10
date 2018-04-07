@@ -19,6 +19,7 @@ int main()
     cout << "Person p;" << endl;
     Person p;
     
+    cout << "First Name:" << p.getFirstName() << "[Expected: ]" << endl;
     cout << "p.setFirstName(\"Lilly\")" << endl;
     p.setFirstName("Lilly");
     cout << "First Name: " << p.getFirstName() << "[Expected: Lilly]" << endl;
@@ -33,7 +34,7 @@ int main()
     p.setDateOfBirth(18, 6, 2010);
     cout << "Date of Birth: " << p.getDateOfBirth().tm_mday << ", ";
     cout << p.getDateOfBirth().tm_mon << ", " << p.getDateOfBirth().tm_year;
-    cout << "[Expected: 18, 6, 2010]" << endl;
+    cout << "[Expected: 18, 6, 110]" << endl;
     cout << endl;
 
     cout << "p.setAddress(\"101 Butter St.\");" << endl;
@@ -64,6 +65,8 @@ int main()
     cout << "--------------------------------" << endl;
     cout << "Testing Constructors:" << endl;
     cout << "--------------------------------" << endl << endl;
+    cout << "Testing Copy Constructor:" << endl;
+    cout << "--------------------------------" << endl;
     cout << "Person p2 = p;" << endl;
     Person p2 = p;
     cout << "Testing to see if it has most of the same data stored;" << endl;
@@ -71,7 +74,7 @@ int main()
     cout << "Last Name : " << p2.getLastName() << "[Expected: Lawson]" << endl;
     cout << "Date of Birth: " << p2.getDateOfBirth().tm_mday << ", ";
     cout << p.getDateOfBirth().tm_mon << ", " << p.getDateOfBirth().tm_year;
-    cout << "[Expected: 18, 6, 2010]" << endl << endl;
+    cout << "[Expected: 18, 6, 110]" << endl << endl;
 
     cout << "Now going to change the name..." << endl;
     cout << "p2.setFirstName(\"Barry\");" << endl;
@@ -81,6 +84,8 @@ int main()
     cout << "p2 First Name: " << p2.getFirstName() << "[Expected: Barry]";
     cout << endl << endl; 
     
+    cout << "Testing Full Constructor:" << endl;
+    cout << "--------------------------------" << endl;
     cout << "Person p3 = Person(49700010, \"ab3de\", \"Battleson\",";
     cout << "\"Andrew\", " << endl << "15, 4, 1997, \"andyb123@gmail.com\",";
     cout << endl << "\"404 Texas Ave.\", 8042121515)" << endl;
